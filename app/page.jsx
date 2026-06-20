@@ -8,7 +8,9 @@ const [ formData, setFormData] = useState({userName :"",email:"",password:""} )
 const router = useRouter()
 const handleSubmit = (e)=>{
 e.preventDefault()
-console.log("form-data", formData)
+// console.log("form-data", formData)
+sessionStorage.setItem("UserDetails",JSON.stringify({userName:formData?.userName,email:formData?.email}))
+
 router.push("/VerificationPage")
 }
 
