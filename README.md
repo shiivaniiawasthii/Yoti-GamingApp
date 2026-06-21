@@ -1,6 +1,6 @@
 ## Yoti-GamingApp 
 
-A Next.js application integrating Yoti AVS to verify players are 25+ during registration - It's a registration flow 
+A Next.js application integrating Yoti AVS to verify players are 18+ during registration - It's a registration flow 
 where users verify their age using Yoti AVS before they can sign up.
 
 ## What it does
@@ -19,12 +19,15 @@ where users verify their age using Yoti AVS before they can sign up.
 You'll need Node.js and an ngrok account
 
 1. Clone the repo and run npm install
-   
+   git clone https://github.com/yourusername/yoti-gaming-app.git
+   cd yoti-gaming-app
+   npm install
 
-3. You need ngrok because Yoti needs a public URL to redirect back to.
+2. You need ngrok because Yoti needs a public URL to redirect back to.
    Run this in a separate terminal:
    ngrok http 3000
-### Setup ngrok
+   
+## Setup ngrok
 Yoti needs a public URL to redirect back to after verification, localhost won't work.
 
 Go to ngrok.com, create a free account.
@@ -35,7 +38,7 @@ ngrok config add-authtoken your_ngrok_token_here
 Write this command line in a seperate terminal while running the localhost in another:
 ngrok http 3000
 
-It will show a URL like https://abc123.ngrok-free.app — copy that.
+It will show a URL like https://abc123.ngrok-free.app - copy that.
 
  Note: every time you restart ngrok you get a new URL, so update your .env each time.
 
