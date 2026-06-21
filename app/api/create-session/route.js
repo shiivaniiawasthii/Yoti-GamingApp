@@ -18,20 +18,20 @@ export async function POST(req) {
       ttl: 900,
       age_estimation: {
         allowed: selectedOption === "age_estimation",
-        threshold: 25,
+        threshold: 18,
         level: "PASSIVE",
         age_estimation_allowed: true,
-        age_estimation_threshold: 25,
+        age_estimation_threshold: 18,
         retry_limit: 3
       },
       digital_id: {
         allowed: selectedOption === "digital_id",
-        threshold: 25,
+        threshold: 18,
         retry_limit: 3
       },
       doc_scan: {
         allowed: selectedOption === "id_verification",
-        threshold: 25,
+        threshold: 18,
         authenticity: "AUTO",
         preset_issuing_country: "GBR",
         level: "PASSIVE",

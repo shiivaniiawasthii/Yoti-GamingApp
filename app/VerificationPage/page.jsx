@@ -85,7 +85,7 @@ export default function VerificationPage() {
               <div className="grid gap-1 ">
                 <h2 className="text-xl font-semibold text-white">Hi, {userName ? userName : "User"}</h2>
                 <p className="text-gray-500 text-sm py-2">
-                  Choose a verification method to confirm you are 25+
+                  Choose a verification method to confirm you are 18+
                 </p>
               </div >
 
