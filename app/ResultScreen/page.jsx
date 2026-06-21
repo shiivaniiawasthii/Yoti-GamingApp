@@ -1,80 +1,80 @@
 "use client"
 
-import {useEffect, useState} from "react"
-import {useRouter,useSearchParams} from "next/navigation"
+import { useEffect, useState } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
 
 
-export default function ResultScreen(){
-const router = useRouter()
-const [loading,setLoading] = useState(true)
-const[userName,setUserName] = useState("")
-const[error,setError] = useState(null)
-const searchParams = useSearchParams()
-const [responseData,setResponseData] = useState(null)
+export default function ResultScreen() {
+  const router = useRouter()
+  const [loading, setLoading] = useState(true)
+  const [userName, setUserName] = useState("")
+  const [error, setError] = useState(null)
+  const searchParams = useSearchParams()
+  const [responseData, setResponseData] = useState(null)
 
 
-useEffect(()=>{
-const sessionStorageSavedUserData = sessionStorage.getItem("UserDetails")
-if(!sessionStorageSavedUserData){
-router.replace("/")
-return
-}
-setUserName(JSON.parse(sessionStorageSavedUserData).userName)
+  useEffect(() => {
+    const sessionStorageSavedUserData = sessionStorage.getItem("UserDetails")
+    if (!sessionStorageSavedUserData) {
+      router.replace("/")
+      return
+    }
+    setUserName(JSON.parse(sessionStorageSavedUserData).userName)
 
-const sessionId = searchParams.get("sessionId")
-if(!sessionId){
-setError("No session Id")
-setLoading(false)
-return
-}
+    const sessionId = searchParams.get("sessionId")
+    if (!sessionId) {
+      setError("No session Id")
+      setLoading(false)
+      return
+    }
 
-const FetchingResponse = async()=>{
-try{
-const res = await fetch (`/api/get-status?sessionId=${sessionId}`)
-const data = await res.json()
-setResponseData(data)
-setLoading(false)
-}
-catch(err){
-console.log(err,"-----------result error after verification")
-setError("Error found")
-setLoading(false)
-}
-}
-FetchingResponse()
-
-
-},[router,searchParams])
-
-console.log("responsedat22222222222",responseData)
+    const FetchingResponse = async () => {
+      try {
+        const res = await fetch(`/api/get-status?sessionId=${sessionId}`)
+        const data = await res.json()
+        setResponseData(data)
+        setLoading(false)
+      }
+      catch (err) {
+        console.log(err, "-----------result error after verification")
+        setError("Error found")
+        setLoading(false)
+      }
+    }
+    FetchingResponse()
 
 
-const isSuccess = responseData?.status === "COMPLETE"
-// console.log("isSuccess----",isSuccess)
+  }, [router, searchParams])
 
-if(loading){
-return (<div className="bg-white  grid place-items-center p-5 text-center min-h-screen">
-<p className="text-black ">Getting verification Result.....</p>
-</div>)
-}
-
-if(error){
-return(
-<div className="bg-white border-black p-5 grid place-items-center min-h-screen"><div>
-<p className="text-red-300">{error}</p>
-<button onClick ={()=>{router.push("/")}}
- className="text-white px-5 py-5 bg-sky-500 rounded-lg">Go back</button>
-</div></div>
-)
-}
+  console.log("responsedat22222222222", responseData)
 
 
-const SelectedMethod = ()=>{
-if(responseData?.age_estimation?.attempts>0)return "Age Estimation"
-if(responseData?.doc_scan?.attemps>0)return "ID Verification"
-if(responseData?.digital_id?.attempts>0) return "Digital Id"
-return "-"
-}
+  const isSuccess = responseData?.status === "COMPLETE"
+  // console.log("isSuccess----",isSuccess)
+
+  if (loading) {
+    return (<div className="bg-white  grid place-items-center p-5 text-center min-h-screen">
+      <p className="text-black ">Getting verification Result.....</p>
+    </div>)
+  }
+
+  if (error) {
+    return (
+      <div className="bg-white border-black p-5 grid place-items-center min-h-screen"><div>
+        <p className="text-red-300">{error}</p>
+        <button onClick={() => { router.push("/") }}
+          className="text-white px-5 py-5 bg-sky-500 rounded-lg">Go back</button>
+      </div></div>
+    )
+  }
+
+
+  const SelectedMethod = () => {
+    if (responseData?.age_estimation?.attempts > 0) return "Age Estimation"
+    if (responseData?.doc_scan?.attemps > 0) return "ID Verification"
+    if (responseData?.digital_id?.attempts > 0) return "Digital Id"
+    return "-"
+  }
 
   return (
     <div className="min-h-screen bg-white grid place-items-center p-4">
@@ -82,20 +82,20 @@ return "-"
 
         <div className="text-center">
           <h1 className=" text-black text-4xl font-bold ">
-           Gaming Yoti
+            Gaming Yoti
           </h1>
         </div>
 
         <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg grid gap-6">
 
           <div className="grid gap-2 text-center">
-           
+
             <h2 className="  text-black text-xl font-bold ">
-            {isSuccess? "Verfication complete":"verification failed"}
+              {isSuccess ? "Verfication complete" : "verification failed"}
             </h2>
             <p className="text-gray-500">
-              
-{isSuccess?` Hey,${userName} Welcome to Gaming Yoti App`: "Try again"}
+
+              {isSuccess ? ` Hey,${userName} Welcome to Gaming Yoti App` : "Try again"}
             </p>
           </div>
 
@@ -124,9 +124,8 @@ return "-"
             <div className="grid grid-cols-2 items-center">
               <span className="text-gray-500 text-sm">Session Status</span>
               <div className="grid justify-end">
-                <span className={`text-sm font-semibold px-2 py-1 rounded-full ${
-                  isSuccess ? "bg-green-100 text-green-600" : "bg-red-100 text-red-600"
-                }`}>
+                <span className={`text-sm font-semibold px-2 py-1 rounded-full ${isSuccess ? "bg-green-100 text-green-600" : "bg-red-100 text-red-600"
+                  }`}>
                   {responseData?.status}
                 </span>
               </div>
@@ -150,7 +149,7 @@ return "-"
           )}
 
         </div>
-  </div>
+      </div>
     </div>
   );
 }
