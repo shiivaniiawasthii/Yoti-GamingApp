@@ -20,8 +20,6 @@ export async function POST(req) {
         allowed: selectedOption === "age_estimation",
         threshold: 18,
         level: "PASSIVE",
-        age_estimation_allowed: true,
-        age_estimation_threshold: 18,
         retry_limit: 3
       },
       digital_id: {
