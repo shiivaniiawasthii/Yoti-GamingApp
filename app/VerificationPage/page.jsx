@@ -54,7 +54,7 @@ body: JSON.stringify({method:selectOption})
 
 })
 const data = await res.json()
-console.log(data?.sessionUrl,"----------------url")
+// console.log(data?.sessionUrl,"----------------url")
 window.location.href = data?.sessionUrl
 
 }
