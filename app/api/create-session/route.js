@@ -18,22 +18,22 @@ export async function POST(req) {
       ttl: 900,
       age_estimation: {
         allowed: selectedOption === "age_estimation",
-        threshold: 21,
+        threshold: 25,
         level: "PASSIVE",
+        age_estimation_allowed: true,
+        age_estimation_threshold: 25,
         retry_limit: 3
       },
       digital_id: {
         allowed: selectedOption === "digital_id",
-        threshold: 18,
-        age_estimation_allowed: true,
-        age_estimation_threshold: 21,
+        threshold: 25,
         retry_limit: 3
       },
       doc_scan: {
-        allowed: selectedOption === "doc_scan",
-        threshold: 18,
+        allowed: selectedOption === "id_verification",
+        threshold: 25,
         authenticity: "AUTO",
-        preset_issuing_country: "IN",
+        preset_issuing_country: "GBR",
         level: "PASSIVE",
         retry_limit: 3
       },

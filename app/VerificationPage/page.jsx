@@ -82,14 +82,14 @@ export default function VerificationPage() {
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
             <div >
 
-              <div className="grid gap-1">
+              <div className="grid gap-1 ">
                 <h2 className="text-xl font-semibold text-white">Hi, {userName ? userName : "User"}</h2>
-                <p className="text-gray-500 text-sm py-4">
+                <p className="text-gray-500 text-sm py-2">
                   Choose a verification method to confirm you are 25+
                 </p>
               </div >
 
-              <div className="grid gap-3">
+              <div className="grid gap-3 border border-white p-4 rounded-xl">
                 {ChooseMthodToVerify.map((method) => (
                   <button
                     key={method.id}
@@ -120,7 +120,7 @@ export default function VerificationPage() {
                   type="submit"
                   onClick={handleCreateSession}
                   disabled={loading}
-                  className="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-2 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                  className="flex w-full justify-center rounded-md bg-sky-500 px-3 py-2 text-sm/6 font-semibold text-white hover:bg-sky-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
                 >
                   {loading ? (
                     <div className="grid grid-cols items-center gap-2">

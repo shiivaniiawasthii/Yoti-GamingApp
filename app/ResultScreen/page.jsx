@@ -54,7 +54,7 @@ export default function ResultScreen() {
 
   }, [router, searchParams])
 
-  console.log("responsedat22222222222", responseData)
+  // console.log("responsedat22222222222", responseData)
 
 
   const isSuccess = responseData?.status === "COMPLETE"
@@ -62,13 +62,13 @@ export default function ResultScreen() {
 
   if (loading) {
     return (<div className="bg-white  grid place-items-center p-5 text-center min-h-screen">
-      <p className="text-black ">Getting verification Result.....</p>
+      <p className="text-white ">Getting verification Result.....</p>
     </div>)
   }
 
   if (error) {
     return (
-      <div className="bg-white border-black p-5 grid place-items-center min-h-screen"><div>
+      <div className="bg-white border-white p-5 grid place-items-center min-h-screen"><div>
         <p className="text-red-300">{error}</p>
         <button onClick={() => { router.push("/") }}
           className="text-white px-5 py-5 bg-sky-500 rounded-lg">Go back</button>
@@ -76,54 +76,58 @@ export default function ResultScreen() {
     )
   }
 
-
+  console.log(responseData?.doc_scan?.attempts, 2222222222222222222222)
   const SelectedMethod = () => {
+    console.log("hellloooooooo")
     if (responseData?.age_estimation?.attempts > 0) return "Age Estimation"
-    if (responseData?.doc_scan?.attemps > 0) return "ID Verification"
-    if (responseData?.digital_id?.attempts > 0) return "Digital Id"
-    return "-"
+    else if (responseData?.doc_scan?.attempts > 0) {
+      // console.log("heyyyyyyyy")
+      return "ID Verification"
+    }
+    else if (responseData?.digital_id?.attempts > 0) return "Digital Id"
+    return null
   }
 
   return (
-    <div className="min-h-screen bg-white grid place-items-center p-4">
+    <div className="min-h-screen bg-gray-900 min-h-screen grid place-items-center p-4">
       <div className="w-full max-w-md grid gap-8">
 
         <div className="text-center">
-          <h1 className=" text-black text-4xl font-bold ">
+          <h1 className=" text-white text-4xl font-bold ">
             Gaming Yoti
           </h1>
         </div>
 
-        <div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg grid gap-6">
+        <div className="bg-gray-900 rounded-2xl p-8 border-white  shadow-lg grid gap-6">
 
-          <div className="grid gap-2 text-center">
+          <div className="grid gap-2 text-center bg-gray-900">
 
-            <h2 className="  text-black text-xl font-bold ">
+            <h2 className="  text-white text-xl font-bold ">
               {isSuccess ? "Verfication complete" : "verification failed"}
             </h2>
             <p className="text-gray-500">
 
-              {isSuccess ? ` Hey,${userName} Welcome to Gaming Yoti App` : "Try again"}
+              {isSuccess ? ` Hey,${userName} Welcome to Gaming Yoti App` : <button className="text-sky-600 font-bold cursor-pointer" onClick={() => router.push("/VerificationPage")}>Try again</button>}
             </p>
           </div>
 
-          <div className="bg-gray-50 rounded-xl p-5 grid gap-3">
+          <div className="bg-gray-900 border border-white rounded-xl p-5 grid gap-3">
 
             <div className="grid grid-cols-2 items-center">
               <span className="text-gray-500 text-sm">Username</span>
-              <span className="text-black text-sm  text-right">{userName}</span>
+              <span className="text-white text-sm  text-right">{userName}</span>
             </div>
             <div className="border-t border-gray-200" />
 
             <div className="grid grid-cols-2 items-center">
               <span className="text-gray-500 text-sm">Selected Method</span>
-              <span className="text-black text-sm  text-right">{SelectedMethod()}</span>
+              <span className="text-white text-sm  text-right">{SelectedMethod()}</span>
             </div>
             <div className="border-t border-gray-200" />
 
             <div className="grid grid-cols-2 items-center">
               <span className="text-gray-500 text-sm">Timestamp</span>
-              <span className="text-black text-sm  text-right">
+              <span className="text-white text-sm  text-right">
                 {new Date(responseData?.created_at).toString()}
               </span>
             </div>
