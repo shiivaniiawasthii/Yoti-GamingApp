@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Yoti-GamingApp 
 
-## Getting Started
+A Next.js application integrating Yoti AVS to verify players are 18+ during registration - It's a registration flow 
+where users verify their age using Yoti AVS before they can sign up.
 
-First, run the development server:
+## What it does
+- User signs up with username, email and password
+- Then they pick how they want to verify their age (face scan, ID, or digital ID)
+- Yoti handles the verification and sends them back to a result page
+- 
+## Prerequisites
+- Node.js 18+
+- npm
+- [ngrok](https://ngrok.com/) account 
+- Yoti AVS API Key and SDK ID
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## How to run it
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You'll need Node.js and an ngrok account
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repo and run npm install
+   git clone https://github.com/yourusername/yoti-gaming-app.git
+   cd yoti-gaming-app
+   npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. You need ngrok because Yoti needs a public URL to redirect back to.
+   Run this in a separate terminal:
+   ngrok http 3000
+   
+## Setup ngrok
+Yoti needs a public URL to redirect back to after verification, localhost won't work.
 
-## Learn More
+Go to ngrok.com, create a free account.
 
-To learn more about Next.js, take a look at the following resources:
+Connect your account:
+ngrok config add-authtoken your_ngrok_token_here
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Write this command line in a seperate terminal while running the localhost in another:
+ngrok http 3000
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+It will show a URL like https://abc123.ngrok-free.app - copy that.
 
-## Deploy on Vercel
+ Note: every time you restart ngrok you get a new URL, so update your .env each time.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Create a .env file and add these:
+   NEXT_PUBLIC_YOTI_AVS_API_KEY=your key here
+   NEXT_PUBLIC_YOTI_AVS_SDK_ID=your sdk id here
+   NEXT_PUBLIC_APP_URL=the https url ngrok gives you
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+6. Run npm run dev and open localhost:3000
+
+## App Flow
+1. **Landing Page** — Enter username, email, password
+2. **Verification Page** — Choose Age Estimation / ID Verification / Digital ID
+3. **Yoti AVS** — Complete verification on Yoti's platform
+4. **Result Screen** — View session status, method used, and timestamp
+
+## Note
+I used ngrok because Yoti's callback couldn't reach localhost directly. 
+The app URL in .env needs to be the ngrok one for the redirect to work after verification
+
+
+
