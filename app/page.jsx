@@ -15,7 +15,7 @@ export default function LandingPage() {
   }
 
   return (
-    <div>
+    <div className="bg-gray-900 min-h-screen">
       <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img src="https://cdn.aws.yoti.com/wp-content/uploads/yoti-logo.png" alt="Your Company" className="mx-auto h-10 w-auto" />

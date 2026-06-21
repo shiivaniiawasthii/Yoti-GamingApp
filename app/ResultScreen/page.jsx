@@ -30,7 +30,15 @@ export default function ResultScreen() {
 
     const FetchingResponse = async () => {
       try {
+
         const res = await fetch(`/api/get-status?sessionId=${sessionId}`)
+
+        if (!res.ok) {
+          setError("Result not available")
+          setLoading(false)
+          return
+
+        }
         const data = await res.json()
         setResponseData(data)
         setLoading(false)
