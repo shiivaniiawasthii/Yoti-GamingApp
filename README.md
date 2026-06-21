@@ -19,7 +19,7 @@ where users verify their age using Yoti AVS before they can sign up.
 You'll need Node.js and an ngrok account
 
 1. Clone the repo and run npm install
-   git clone https://github.com/yourusername/yoti-gaming-app.git
+   git clone https://github.com/shiivaniiawasthii/Yoti-GamingApp.git
    cd yoti-gaming-app
    npm install
 
