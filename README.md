@@ -5,7 +5,7 @@ https://github.com/user-attachments/assets/8c616bb1-1710-46d4-922f-9b64151e757d
 
 ## Yoti-GamingApp 
 
-A Next.js application integrating Yoti AVS to verify players are 18+ during registration - It's a registration flow 
+A Next.js application integrating Yoti AVS to verify players are 25+ during registration - It's a registration flow 
 where users verify their age using Yoti AVS before they can sign up.
 
 ## What it does
@@ -47,12 +47,12 @@ It will show a URL like https://abc123.ngrok-free.app - copy that.
 
  Note: every time you restart ngrok you get a new URL, so update your .env each time.
 
-5. Create a .env file and add these:
-   NEXT_PUBLIC_YOTI_AVS_API_KEY=your key here
-   NEXT_PUBLIC_YOTI_AVS_SDK_ID=your sdk id here
+3. Create a .env file and add these:
+   YOTI_AVS_API_KEY=your key here
+   YOTI_AVS_SDK_ID=your sdk id here
    NEXT_PUBLIC_APP_URL=the https url ngrok gives you
 
-6. Run npm run dev and open localhost:3000
+4. Run npm run dev and open localhost:3000
 
 ## App Flow
 1. **Landing Page** — Enter username, email, password
