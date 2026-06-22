@@ -10,7 +10,7 @@ export async function POST(req) {
     const alreadyUssedSessionId = users.find(user => user.sessionId === sessionId && user.username !== userName)
     if (alreadyUssedSessionId) return Response.json({ error: "This session Id is already used" })
 
-    const IsSessionIDExist = users.findIndex(user => user.username === userName && user.status === "PENDING")
+    const IsSessionIDExist = users.findIndex(user => user.username === userName)
     if (IsSessionIDExist !== -1) {
 
         users[IsSessionIDExist].sessionId = sessionId

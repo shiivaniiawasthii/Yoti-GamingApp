@@ -40,7 +40,7 @@ export default function ResultScreen() {
         })
         const validateData = await validateRes.json()
         if (validateData.error) {
-          setError("Unauthorized session")
+          setError("Warning-You are using Used SessionId")
           setLoading(false)
           return
         }
@@ -108,10 +108,10 @@ export default function ResultScreen() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-900 min-h-screen grid place-items-center p-4"><div>
+      <div className="min-h-screen bg-gray-900 min-h-screen grid place-items-center border border-white p-4"><div>
         <p className="text-red-500 p-4 -mx-1 text-lg">{error}</p>
         <button onClick={() => { router.push(" /") }}
-          className="text-white px-5 py-5 bg-sky-500 rounded-lg">Go back</button>
+          className="text-white px-5 py-5 bg-sky-500 rounded-lg">Try Again</button>
       </div></div >
     )
   }
