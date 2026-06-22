@@ -1,10 +1,9 @@
 "use client"
-
+import { Suspense } from "react"
 import { useEffect, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 
-
-export default function ResultScreen() {
+function ResultScreenContent() {
   const router = useRouter()
   const [loading, setLoading] = useState(true)
   const [userName, setUserName] = useState("")
@@ -206,3 +205,11 @@ export default function ResultScreen() {
   );
 }
 
+export default function ResultScreen() {
+  return (
+    <Suspense fallback={<div className="bg-gray-900 min-h-screen grid place-items-center">
+      <p className="text-white">Loading!</p></div>}>
+      <ResultScreenContent />
+    </Suspense>
+  )
+}

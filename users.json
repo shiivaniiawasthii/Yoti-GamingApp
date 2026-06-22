@@ -112,5 +112,29 @@
     "email": "shivaniawasthiiii@gmail.com",
     "sessionId": "7a019c14-2172-4e26-881e-713593049be9",
     "status": "VERIFIED"
+  },
+  {
+    "username": "shivaniwasthi@cognifai.in",
+    "email": "shivani.awthi@cognifai.in",
+    "status": "PENDING",
+    "sessionId": "adb0626e-9bbb-44bd-a146-8b1162434c28"
+  },
+  {
+    "username": "ss",
+    "email": "ssssss@gmail.com",
+    "status": "PENDING",
+    "sessionId": "0b107957-b86c-46f5-bddc-e24099870c7a"
+  },
+  {
+    "username": "vvvv",
+    "email": "vvvv@gmail.com",
+    "status": "PENDING",
+    "sessionId": "31f642ff-3931-46c7-87d3-8e14873f271c"
+  },
+  {
+    "username": "nnn@gmail.com",
+    "email": "nnn@gmail.com",
+    "sessionId": "0f7d6484-2429-4f9f-bd0a-7321f726b529",
+    "status": "VERIFIED"
   }
 ]
