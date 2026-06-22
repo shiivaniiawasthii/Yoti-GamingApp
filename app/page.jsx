@@ -6,9 +6,22 @@ export default function LandingPage() {
 
   const [formData, setFormData] = useState({ userName: "", email: "", password: "" })
   const router = useRouter()
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     // console.log("form-data", formData)
+    const res = await fetch("/api/check-existing-users", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userName: formData?.userName, email: formData?.email }
+      )
+    })
+    const data = await res.json()
+    console.log(data, "data in page.jsx")
+    if (data?.error) {
+      alert(data?.error)
+      return
+    }
+
     sessionStorage.setItem("UserDetails", JSON.stringify({ userName: formData?.userName, email: formData?.email }))
 
     router.push("/VerificationPage")

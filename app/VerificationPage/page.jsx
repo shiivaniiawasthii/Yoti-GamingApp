@@ -55,8 +55,25 @@ export default function VerificationPage() {
       })
       const data = await res.json()
       // console.log(data?.sessionUrl,"----------------url")
-      window.location.href = data?.sessionUrl
+      const sessionId = new URL(data.sessionUrl).searchParams.get("sessionId")
+      console.log("sessionId=====>", sessionId)
 
+      const checkSessionId = await fetch("/api/saving-sessionId", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userName: JSON.parse(sessionStorage.getItem("UserDetails")).userName, sessionId }),
+
+      })
+
+      const sessionRes = await checkSessionId.json()
+      console.log(sessionRes, "checksessionidresssssssssss")
+      if (sessionRes?.error) {
+        alert(sessionRes?.error)
+        setLoading(false)
+        return
+      }
+
+      window.location.href = data?.sessionUrl
     }
     catch (err) {
       console.log("error-", err)

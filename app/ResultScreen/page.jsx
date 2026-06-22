@@ -31,6 +31,21 @@ export default function ResultScreen() {
     const FetchingResponse = async () => {
       try {
 
+        const validateRes = await fetch("/api/saving-sessionId", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            userName: JSON.parse(sessionStorage.getItem("UserDetails")).userName, sessionId
+          })
+        })
+        const validateData = await validateRes.json()
+        if (validateData.error) {
+          setError("Unauthorized session")
+          setLoading(false)
+          return
+        }
+
+
         const res = await fetch(`/api/get-status?sessionId=${sessionId}`)
 
         if (!res.ok) {
@@ -40,8 +55,26 @@ export default function ResultScreen() {
 
         }
         const data = await res.json()
+
+        if (data?.status === "COMPLETE") {
+          await fetch("/api/user-saved", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              userName: JSON.parse(sessionStorage.getItem("UserDetails")).userName,
+              email: JSON.parse(sessionStorage.getItem("UserDetails")).email,
+              sessionId: sessionId
+            })
+
+          })
+        }
+
         setResponseData(data)
         setLoading(false)
+
+        // const data = await res.json()
+        // setResponseData(data)
+        // setLoading(false)
       }
       catch (err) {
         console.log(err, "-----------result error after verification")
@@ -49,12 +82,19 @@ export default function ResultScreen() {
         setLoading(false)
       }
     }
+
     FetchingResponse()
+
+
 
 
   }, [router, searchParams])
 
-  // console.log("responsedat22222222222", responseData)
+  console.log("responsedat22222222222", responseData)
+
+  // ---------------------------------------------------------------------------------------------------
+
+
 
 
   const isSuccess = responseData?.status === "COMPLETE"
@@ -68,11 +108,11 @@ export default function ResultScreen() {
 
   if (error) {
     return (
-      <div className="bg-white border-white p-5 grid place-items-center min-h-screen"><div>
-        <p className="text-red-300">{error}</p>
-        <button onClick={() => { router.push("/") }}
+      <div className="min-h-screen bg-gray-900 min-h-screen grid place-items-center p-4"><div>
+        <p className="text-red-500 p-4 -mx-1 text-lg">{error}</p>
+        <button onClick={() => { router.push(" /") }}
           className="text-white px-5 py-5 bg-sky-500 rounded-lg">Go back</button>
-      </div></div>
+      </div></div >
     )
   }
 
