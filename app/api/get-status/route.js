@@ -15,9 +15,9 @@ export async function GET(request) {
         {
             method: "GET",
             headers: {
-                "Authorization": `Bearer ${process.env.NEXT_PUBLIC_YOTI_AVS_API_KEY}`,
+                "Authorization": `Bearer ${process.env.YOTI_AVS_API_KEY}`,
                 "Content-Type": "application/json",
-                "Yoti-SDK-Id": process.env.NEXT_PUBLIC_YOTI_AVS_SDK_ID
+                "Yoti-SDK-Id": process.env.YOTI_AVS_SDK_ID
             }
 
 

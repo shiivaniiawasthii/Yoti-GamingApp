@@ -56,7 +56,6 @@ export default function VerificationPage() {
       const data = await res.json()
       // console.log(data?.sessionUrl,"----------------url")
       const sessionId = new URL(data.sessionUrl).searchParams.get("sessionId")
-      console.log("sessionId=====>", sessionId)
 
       const checkSessionId = await fetch("/api/saving-sessionId", {
         method: "POST",
@@ -66,7 +65,6 @@ export default function VerificationPage() {
       })
 
       const sessionRes = await checkSessionId.json()
-      console.log(sessionRes, "checksessionidresssssssssss")
       if (sessionRes?.error) {
         alert(sessionRes?.error)
         setLoading(false)
@@ -76,7 +74,6 @@ export default function VerificationPage() {
       window.location.href = data?.sessionUrl
     }
     catch (err) {
-      console.log("error-", err)
       setLoading(false)
 
     }

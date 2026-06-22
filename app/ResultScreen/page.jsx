@@ -77,7 +77,7 @@ export default function ResultScreen() {
         // setLoading(false)
       }
       catch (err) {
-        console.log(err, "-----------result error after verification")
+        // console.log(err, "-----------result error after verification")
         setError("Error found")
         setLoading(false)
       }
@@ -116,7 +116,7 @@ export default function ResultScreen() {
     )
   }
 
-  console.log(responseData?.doc_scan?.attempts, 2222222222222222222222)
+  // console.log(responseData?.doc_scan?.attempts, 2222222222222222222222)
   const SelectedMethod = () => {
     console.log("hellloooooooo")
     if (responseData?.age_estimation?.attempts > 0) return "Age Estimation"

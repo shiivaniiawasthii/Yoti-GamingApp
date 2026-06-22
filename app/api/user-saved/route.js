@@ -6,7 +6,7 @@ export async function POST(req) {
     const UserpathFile = path.join(process.cwd(), "users.json")
     const users = fs.existsSync(UserpathFile) ? JSON.parse(fs.readFileSync(UserpathFile, "utf-8")) : []
     const existinguser = users.findIndex(user => user?.username === userName)
-    console.log(existinguser)
+    // console.log(existinguser)
     if (existinguser !== -1) users[existinguser] = { username: userName, email, sessionId, status: "VERIFIED" }
     else users.push({ username: userName, email, sessionId, status: "VERIFIED" })
     fs.writeFileSync(UserpathFile, JSON.stringify(users, null, 2))

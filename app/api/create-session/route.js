@@ -8,9 +8,9 @@ export async function POST(req) {
   const res = await fetch("https://age.yoti.com/api/v1/sessions", {
     method: "POST",
     headers: {
-      "Authorization": `Bearer ${process.env.NEXT_PUBLIC_YOTI_AVS_API_KEY}`,
+      "Authorization": `Bearer ${process.env.YOTI_AVS_API_KEY}`,
       "Content-Type": "application/json",
-      "Yoti-Sdk-Id": process.env.NEXT_PUBLIC_YOTI_AVS_SDK_ID,
+      "Yoti-Sdk-Id": process.env.YOTI_AVS_SDK_ID,
     },
     body: JSON.stringify({
 
@@ -52,8 +52,8 @@ export async function POST(req) {
   }
 
   const data = await res.json()
-  // console.log(data, process.env. NEXT_PUBLIC_YOTI_AVS_SDK_ID,"response......")
-  const sessionUrl = `https://age.yoti.com?sessionId=${data.id}&sdkId=${process.env.NEXT_PUBLIC_YOTI_AVS_SDK_ID}`
+  // console.log(data, process.env. YOTI_AVS_SDK_ID,"response......")
+  const sessionUrl = `https://age.yoti.com?sessionId=${data.id}&sdkId=${process.env.YOTI_AVS_SDK_ID}`
   return Response.json({ sessionUrl })
 
 }

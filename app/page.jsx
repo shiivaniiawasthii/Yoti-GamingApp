@@ -16,7 +16,6 @@ export default function LandingPage() {
       )
     })
     const data = await res.json()
-    console.log(data, "data in page.jsx")
     if (data?.error) {
       alert(data?.error)
       return

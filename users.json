@@ -1,1 +1,116 @@
-[{"username":"shivani","email":"shivaniideas26@gmail.com","sessionId":"d6bcfb9a-30de-4d05-bbf9-7af5393bae91","status":"VERIFIED"},{"username":"shivaniawasthi","email":"shiv@gmail.com","status":"PENDING","sessionId":"93213f1a-44e0-482b-8d6c-783db06fc14e"},{"username":"shivaniawasthii","email":"26@gmail.com","sessionId":"1479bf86-fed8-4d34-a670-328f71baf0c9","status":"VERIFIED"},{"username":"Watson","email":"watson@gmail.com","status":"PENDING","sessionId":"0e7d3c46-c495-48bb-a2ce-c4065353134f"},{"username":"watson","email":"watson@gmail.com","sessionId":"34dc8816-a723-47d7-ad46-85badbae6738","status":"VERIFIED"},{"username":"skyler","email":"skyler@gmail.com","status":"PENDING","sessionId":"72de51b3-6ac0-41fd-ac31-b579e8d9f315"},{"username":"Jesse","email":"Jesse@gmail.com","sessionId":"ddf1c46b-0079-489f-ab13-7e32cc88d10b","status":"VERIFIED"},{"username":"Ted","email":"Ted@gmail.com","status":"PENDING","sessionId":"4317e58d-4e75-490a-9b48-6a974be9a237"},{"username":"Taylor","email":"Taylor@gmail.com","status":"PENDING","sessionId":"437810cc-4fc7-4b95-8ebc-682e73dd1ecf"},{"username":"Eleven","email":"Eleven@gmail.com","sessionId":"69db5f63-82f0-4b44-bb5c-af821e32d46c","status":"VERIFIED"},{"username":"Ron","email":"ron@gmail.com","status":"PENDING","sessionId":"80e99d18-2db3-47d2-807d-6d317a3274d7"},{"username":"ron","email":"ron@gmail.com","sessionId":"a5187a31-ebb0-4a18-a66f-9e7858a7d8bf","status":"VERIFIED"},{"username":"shiva","email":"shiva@gmail.com","status":"PENDING","sessionId":"f37eb73c-89d4-4773-bf29-48b7f42e4e33"}]
+[
+  {
+    "username": "shivani",
+    "email": "shivaniideas26@gmail.com",
+    "sessionId": "d6bcfb9a-30de-4d05-bbf9-7af5393bae91",
+    "status": "VERIFIED"
+  },
+  {
+    "username": "shivaniawasthi",
+    "email": "shiv@gmail.com",
+    "status": "PENDING",
+    "sessionId": "93213f1a-44e0-482b-8d6c-783db06fc14e"
+  },
+  {
+    "username": "shivaniawasthii",
+    "email": "26@gmail.com",
+    "sessionId": "1479bf86-fed8-4d34-a670-328f71baf0c9",
+    "status": "VERIFIED"
+  },
+  {
+    "username": "Watson",
+    "email": "watson@gmail.com",
+    "status": "PENDING",
+    "sessionId": "0e7d3c46-c495-48bb-a2ce-c4065353134f"
+  },
+  {
+    "username": "watson",
+    "email": "watson@gmail.com",
+    "sessionId": "34dc8816-a723-47d7-ad46-85badbae6738",
+    "status": "VERIFIED"
+  },
+  {
+    "username": "skyler",
+    "email": "skyler@gmail.com",
+    "status": "PENDING",
+    "sessionId": "72de51b3-6ac0-41fd-ac31-b579e8d9f315"
+  },
+  {
+    "username": "Jesse",
+    "email": "Jesse@gmail.com",
+    "sessionId": "ddf1c46b-0079-489f-ab13-7e32cc88d10b",
+    "status": "VERIFIED"
+  },
+  {
+    "username": "Ted",
+    "email": "Ted@gmail.com",
+    "status": "PENDING",
+    "sessionId": "4317e58d-4e75-490a-9b48-6a974be9a237"
+  },
+  {
+    "username": "Taylor",
+    "email": "Taylor@gmail.com",
+    "status": "PENDING",
+    "sessionId": "437810cc-4fc7-4b95-8ebc-682e73dd1ecf"
+  },
+  {
+    "username": "Eleven",
+    "email": "Eleven@gmail.com",
+    "sessionId": "69db5f63-82f0-4b44-bb5c-af821e32d46c",
+    "status": "VERIFIED"
+  },
+  {
+    "username": "Ron",
+    "email": "ron@gmail.com",
+    "status": "PENDING",
+    "sessionId": "80e99d18-2db3-47d2-807d-6d317a3274d7"
+  },
+  {
+    "username": "ron",
+    "email": "ron@gmail.com",
+    "sessionId": "a5187a31-ebb0-4a18-a66f-9e7858a7d8bf",
+    "status": "VERIFIED"
+  },
+  {
+    "username": "shiva",
+    "email": "shiva@gmail.com",
+    "status": "PENDING",
+    "sessionId": "f37eb73c-89d4-4773-bf29-48b7f42e4e33"
+  },
+  {
+    "username": "shivani.awasthi@cognifai.in",
+    "email": "a@gmail.com",
+    "status": "PENDING",
+    "sessionId": "5c5908ce-0012-413e-b992-49245ad73c6b"
+  },
+  {
+    "username": "shivaniaaaa",
+    "email": "a@gmail.com",
+    "status": "PENDING",
+    "sessionId": "68af7de7-0415-4692-a2c0-98cb53211317"
+  },
+  {
+    "username": "awasthi@cognifai.in",
+    "email": "awasthi@cognifai.in",
+    "status": "PENDING",
+    "sessionId": "50b793a9-7da6-4702-a3c4-ee35e763764d"
+  },
+  {
+    "username": "s@gmail.com",
+    "email": "s@gmail.com",
+    "status": "PENDING",
+    "sessionId": "796c6114-60f9-44fa-803b-85a9cfa4e807"
+  },
+  {
+    "username": "Honey",
+    "email": "Honey@gmail.com",
+    "status": "PENDING",
+    "sessionId": "4168b68a-8fc3-4e34-b322-0730bce49e4e"
+  },
+  {
+    "username": "shivaniawasthiiii",
+    "email": "shivaniawasthiiii@gmail.com",
+    "sessionId": "7a019c14-2172-4e26-881e-713593049be9",
+    "status": "VERIFIED"
+  }
+]
